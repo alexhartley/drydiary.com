@@ -41,7 +41,7 @@ module DrydiaryCom
       g.template_engine :erb
     end
 
-    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     config.assets.initialize_on_precompile = false
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
   end
 end
