@@ -1,0 +1,7 @@
+<ul>
+  <% @days.each do |day| %>
+    <li><%= day.date %> - <%= day.text %></li>
+  <% end %>
+</ul>
+
+<%= render 'form' %>
