@@ -26,9 +26,22 @@ module DrydiaryCom
     # config.i18n.default_locale = :de
 
     config.generators do |g|
-      g.test_framework :rspec
+      g.stylesheets false
+      g.javascripts false
+      g.helper false
+      g.test_framework :rspec, {
+        view_specs: false,
+        helper_specs: false,
+        routing_specs: false,
+        controller_specs: false,
+        fixture: false
+      }
+      g.integration_tool :rspec
+      g.orm :mongoid
+      g.template_engine :erb
     end
 
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     config.assets.initialize_on_precompile = false
   end
 end
