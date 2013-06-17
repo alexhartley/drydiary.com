@@ -1,14 +1,7 @@
-<p id="notice"><%= notice %></p>
+<ul>
+  <% @days.each do |day| %>
+    <li><%= day.date %> - <%= day.text %></li>
+  <% end %>
+</ul>
 
-<p>
-  <strong>Date:</strong>
-  <%= @day.date %>
-</p>
-
-<p>
-  <strong>Text:</strong>
-  <%= @day.text %>
-</p>
-
-<%= link_to 'Edit', edit_day_path(@day) %> |
-<%= link_to 'Back', days_path %>
+<%= render 'form' %>

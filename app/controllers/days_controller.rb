@@ -1,14 +1,17 @@
 class DaysController < ApplicationController
-  before_action :set_day, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:create, :update, :destroy]
 
   # GET /days
   def index
-    @days = Day.all
+    @user = User.where(username: params[:username]).one
+    @days = @user.days
     @day  = Day.where(date: Date.today).first || Day.new(date: Date.today)
   end
 
   # GET /days/1
   def show
+    @day  = Day.where(user: @user, date: Date.today).first || Day.new(date: Date.today)
+    @days = Day.all
   end
 
   # GET /days/new
@@ -22,7 +25,7 @@ class DaysController < ApplicationController
 
   # POST /days
   def create
-    @day = Day.new(day_params)
+    @day = current_user.days.build(day_params)
 
     if @day.save
       redirect_to @day, notice: 'Day was successfully created.'
@@ -33,7 +36,7 @@ class DaysController < ApplicationController
 
   # PATCH/PUT /days/1
   def update
-    if @day.update(day_params)
+    if @day.user == current_user && @day.update(day_params)
       redirect_to @day, notice: 'Day was successfully updated.'
     else
       render action: 'edit'
@@ -42,18 +45,22 @@ class DaysController < ApplicationController
 
   # DELETE /days/1
   def destroy
-    @day.destroy
-    redirect_to days_url, notice: 'Day was successfully destroyed.'
+    if @day.user == current_user
+      @day.destroy
+      redirect_to days_url, notice: 'Day was successfully destroyed.'
+    else
+      render action: 'edit'
+    end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_day
-      @day = Day.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_day
+    @day = Day.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def day_params
-      params.require(:day).permit(:date, :text)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def day_params
+    params.require(:day).permit(:date, :text)
+  end
 end

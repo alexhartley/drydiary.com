@@ -1,7 +1,11 @@
 DrydiaryCom::Application.routes.draw do
+  devise_for :users
+
   resources :days
 
   root 'days#index'
+
+  get ':username' => 'days#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
