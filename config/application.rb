@@ -10,6 +10,7 @@ require "rails/test_unit/railtie"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
+Bundler.require(*Rails.groups(:assets => %w(development test)))
 
 module DrydiaryCom
   class Application < Rails::Application
@@ -41,6 +42,7 @@ module DrydiaryCom
       g.template_engine :erb
     end
 
+    config.assets.enabled = true
     config.assets.initialize_on_precompile = false
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
   end

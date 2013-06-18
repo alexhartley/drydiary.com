@@ -1,0 +1,9 @@
+<%= render 'form' %>
+<ul class="days">
+  <% @days.each do |day| %>
+    <li>
+      <h2><%= day.date.strftime "%A %d %B %Y" %></h2>
+      <%= day.text %>
+    </li>
+  <% end %>
+</ul>

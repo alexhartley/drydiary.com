@@ -1,4 +1,5 @@
 class DaysController < ApplicationController
+  before_filter :set_day, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, only: [:create, :update, :destroy]
 
   # GET /days
@@ -10,8 +11,6 @@ class DaysController < ApplicationController
 
   # GET /days/1
   def show
-    @day  = Day.where(user: @user, date: Date.today).first || Day.new(date: Date.today)
-    @days = Day.all
   end
 
   # GET /days/new
@@ -28,7 +27,7 @@ class DaysController < ApplicationController
     @day = current_user.days.build(day_params)
 
     if @day.save
-      redirect_to @day, notice: 'Day was successfully created.'
+      redirect_to '/', notice: 'Day was successfully created.'
     else
       render action: 'new'
     end
@@ -36,8 +35,8 @@ class DaysController < ApplicationController
 
   # PATCH/PUT /days/1
   def update
-    if @day.user == current_user && @day.update(day_params)
-      redirect_to @day, notice: 'Day was successfully updated.'
+    if @day.user == current_user && @day.update_attributes(day_params)
+      redirect_to '/', notice: 'Day was successfully updated.'
     else
       render action: 'edit'
     end
@@ -47,7 +46,7 @@ class DaysController < ApplicationController
   def destroy
     if @day.user == current_user
       @day.destroy
-      redirect_to days_url, notice: 'Day was successfully destroyed.'
+      redirect_to '/', notice: 'Day was successfully destroyed.'
     else
       render action: 'edit'
     end
