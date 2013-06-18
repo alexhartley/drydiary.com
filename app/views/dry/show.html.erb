@@ -1,9 +1,11 @@
-<%= render 'form' %>
 <ul class="days">
-  <% @days.each do |day| %>
+  <% ([day] + days).each do |day| %>
     <li>
       <h2>
         <%= day.date.strftime "%A %d %B %Y" %>
+        <small>
+          <%= link_to "edit", new_or_edit_day_path(day) %>
+        </small>
         <%= image_tag 'tick.png', class: 'tick pull-right' %>
       </h2>
       <%= day.text %>

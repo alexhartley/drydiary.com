@@ -4,7 +4,7 @@ DrydiaryCom::Application.routes.draw do
 
   resource :dry
 
-  resources :days, only: [:new, :create, :edit, :update]
+  resources :days, only: [:new, :edit, :create, :update]
 
   root 'dry#index'
 

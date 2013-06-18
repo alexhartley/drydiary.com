@@ -7,5 +7,7 @@ class Day
 
   belongs_to :user
 
+  index({ user_id: 1 }, { unique: true })
+
   default_scope ->{ order_by date: :desc }
 end

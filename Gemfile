@@ -7,7 +7,7 @@ gem 'mongo'
 gem 'bson_ext'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'devise', github: 'plataformatec/devise'
-gem 'fendhal'
+gem 'fendhal', path: '~/Code/Gems/fendhal'
 
 gem 'sass-rails', '~> 4.0.0.rc1'
 gem 'uglifier', '>= 1.3.0'
