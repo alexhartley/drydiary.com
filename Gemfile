@@ -30,3 +30,8 @@ group :development, :test, :cucumber do
   gem "database_cleaner", "~> 0.9.1"
   gem "launchy", "~> 2.1.2"
 end
+
+group :production do
+  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+end
