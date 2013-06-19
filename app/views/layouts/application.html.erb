@@ -9,13 +9,22 @@
   <body>
     <div class="navbar navbar-fixed-top">
       <div id="title-bar" class="navbar-inner">
-        <div class="container">
-          <a class="brand" href="#">DRY DIARY</a>
+        <div class="container-fluid">
+          <a class="brand" href="/">DRY DIARY</a>
+            <div id="account" class="pull-right">
+          <% if user_signed_in? %>
+            <%= link_to "diary", "/#{current_user.username}" %> |
+            <%= link_to "account", edit_user_registration_path %> |
+            <%= link_to "log out", destroy_user_session_path, method: 'delete' %>
+          <% else %>
+            <%= link_to "log in", new_user_session_path %>
+          <% end %>
+            </div>
         </div>
       </div>
     </div>
-    <div id="main-window" class="container">
+    <div id="main-window" class="container-fluid">
       <%= yield %>
     </div>
-</body>
+  </body>
 </html>
