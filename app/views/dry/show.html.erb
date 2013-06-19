@@ -4,7 +4,7 @@
       <h2>
         <%= day.date.strftime "%A %d %B %Y" %>
         <%= form_for day do |f| %>
-          <%= f.hidden_field :ticked, value: !day.ticked %>
+          <%= f.hidden_field :ticked, value: !day.ticked? %>
           <%= f.hidden_field :date %>
           <%= f.submit '', class: tick_icon(day) %>
         <% end %>

@@ -4,7 +4,7 @@ class Day
 
   field :date,   type: Date
   field :text,   type: String
-  field :ticked, type: Boolean
+  field :ticked, type: Mongoid::Boolean
 
   belongs_to :user
 
