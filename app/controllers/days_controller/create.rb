@@ -20,7 +20,7 @@ class DaysController < ApplicationController
     end
 
     def day_params
-      params.require(:day).permit(:date, :text)
+      params.require(:day).permit(:date, :text, :ticked)
     end
 
   end

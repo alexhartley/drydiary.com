@@ -6,7 +6,7 @@ module DryHelper
   end
 
   def tick_icon(day)
-    if day.persisted? then 'tick-medium.png'
-    else 'tick-grey.png' end
+    if day.ticked? then 'pull-right tick ticked'
+    else 'pull-right tick unticked' end
   end
 end

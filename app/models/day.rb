@@ -2,8 +2,9 @@ class Day
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  field :date, type: Date
-  field :text, type: String
+  field :date,   type: Date
+  field :text,   type: String
+  field :ticked, type: Boolean
 
   belongs_to :user
 

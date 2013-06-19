@@ -3,7 +3,11 @@
     <li class="day">
       <h2>
         <%= day.date.strftime "%A %d %B %Y" %>
-        <%= image_tag tick_icon(day), class: 'tick pull-right' %>
+        <%= form_for day do |f| %>
+          <%= f.hidden_field :ticked, value: !day.ticked %>
+          <%= f.hidden_field :date %>
+          <%= f.submit '', class: tick_icon(day) %>
+        <% end %>
       </h2>
       <p>
       <%= day.text %>
