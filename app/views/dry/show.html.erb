@@ -1,14 +1,18 @@
 <ul class="days">
   <% days.each do |day| %>
-    <li>
+    <li class="day">
       <h2>
         <%= day.date.strftime "%A %d %B %Y" %>
-        <small>
-          <%= link_to "edit", new_or_edit_day_path(day) %>
-        </small>
-        <%= image_tag 'tick.png', class: 'tick pull-right' %>
+        <%= image_tag tick_icon(day), class: 'tick pull-right' %>
       </h2>
+      <p>
       <%= day.text %>
+      </p>
+      <ul class="edit-options">
+        <li>
+          <%= link_to "Edit", new_or_edit_day_path(day) %>
+        </li>
+      </ul>
     </li>
   <% end %>
 </ul>

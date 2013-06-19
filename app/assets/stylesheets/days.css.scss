@@ -1,16 +1,30 @@
 .days {
   list-style: none;
   margin-left: 0px;
-  li {
+  .day {
     margin: 10px 0px;
     padding: 5px;
     width: 100%;
     border-radius: 10px;
     border: 5px solid #efefef;
-    min-height: 115px;
+    min-height: 80px;
+    .tick {
+      margin-top: -6px;
+    }
     small a {
       font-size: 16px;
     }
+  }
+  .edit-options {
+    list-style: none;
+    margin-left: 0px;
+    padding-left: 2px;
+    li {
+      display: inline-block;
+    }
+  }
+  p {
+    padding-left: 2px;
   }
 }
 
