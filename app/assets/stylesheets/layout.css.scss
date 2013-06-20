@@ -4,6 +4,10 @@ html, body {
   color: #333;
 }
 
+.clear {
+  clear: both;
+}
+
 #title-bar {
   background: #574673;
   .brand {
@@ -12,19 +16,32 @@ html, body {
     font-weight: bold;
   }
 }
-#main-window {
-  margin-top: 40px;
-  height: 100%;
 
+#main-window {
+  margin-top: 65px;
+  height: auto;
+}
+
+#logged-in-user {
+  color: #fafafa;
+  font-size: 14px;
+  padding-top: 15px;
+  float: right;
+  a {
+    color: #fafafa;
+  }
+}
+
+#quick-links {
+  background: #fafafa;
 }
 
 #account {
-  padding-top: 10px;
-  padding-right: 2px;
+  margin: 4px 0px 5px 0px;
   text-align: right;
-  color: #fafafa;
+  color: #574673;
   a {
-    color: #fafafa;
+    color: #574673;
   }
 }
 
@@ -34,4 +51,12 @@ html, body {
 
 .hidden {
   display: none;
+}
+
+footer {
+  font-size: 12px;
+  color: #888;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0px;
 }

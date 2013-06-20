@@ -1,3 +1,6 @@
+#user-summary {
+  text-align: justify;
+}
 .days {
   list-style: none;
   margin-left: 0px;
@@ -9,37 +12,54 @@
     border-radius: 10px;
     border: 5px solid #efefef;
     min-height: 100px;
-    h2 {
-      form {
-        margin: 0px;
-        padding: 0px;
-        float: right;
-      }
-      .tick {
-        margin: -6px 0px 0px 0px;
-        border: 0px none;
-        padding: 0px;
-        height: 74px;
-        width: 74px;
-      }
-      .tick.ticked {
-        background: url(image-path('tick-medium.png')) no-repeat;
-      }
-      .tick.unticked {
-        background: url(image-path('tick-grey.png')) no-repeat;
-      }
-    }
     .date-day-of-week {
-      display: inline-block;
+      font-size: 1.75em;
+      font-weight: bold;
       width: 200px;
+      margin: 10px 5px;
       white-space: nowrap;
-      margin-right: 10px;
+      @media (min-width: 480px) {
+        font-size: 2.5em;
+        display: inline-block;
+      }
     }
     .date-rest-of-date {
-      display: inline-block;
+      font-size: 1.75em;
+      font-weight: bold;
+      margin-top: 10px;
+      margin: 10px 5px;
       white-space: nowrap;
-      margin-right: 10px;
+      @media (min-width: 480px) {
+        font-size: 2.5em;
+        display: inline-block;
+      }
     }
+    p,.edit-options {
+      padding: 5px;
+      text-align: justify;
+    }
+  }
+  .tick-box {
+    padding-top: 10px;
+    float: right;
+    width: 74px;
+    form {
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+  .tick {
+    margin: -6px 0px 10px 0px;
+    border: 0px none;
+    padding: 0px;
+    height: 74px;
+    width: 74px;
+  }
+  .tick.ticked {
+    background: url(image-path('tick-medium.png')) no-repeat;
+  }
+  .tick.unticked {
+    background: url(image-path('tick-grey.png')) no-repeat;
   }
   .edit-options {
     list-style: none;

@@ -6,19 +6,22 @@
 <ul class="days">
   <% days.each do |day| %>
     <li class="day">
-      <h2>
-        <span class="date-day-of-week"><%= day.date.strftime "%A" %></span>
+      <div class="tick-box">
         <% if current_user == user %>
           <%= form_for day do |f| %>
-            <%= f.hidden_field :ticked, value: !day.ticked? %>
-            <%= f.hidden_field :date %>
+            <%= f.hidden_field :ticked, id: dom_id(day, :ticked), value: !day.ticked? %>
+            <%= f.hidden_field :date, id: dom_id(day, :date) %>
             <%= f.submit '', class: tick_icon(day) %>
           <% end %>
         <% else %>
-          <div class="<%= tick_icon(day) %>"/>
+          <div class="<%= tick_icon(day) %>"></div>
         <% end %>
-        <span class="date-rest-of-date"><%= day.date.strftime "%d %B %Y" %></span>
-      </h2>
+      </div>
+      <div class="date-container">
+        <div class="date-day-of-week"><%= day.date.strftime "%A" %></div>
+        <div class="date-rest-of-date"><%= day.date.strftime "%d %B" %></div>
+        <div class="date-rest-of-date"><%= day.date.strftime "%Y" %></div>
+      </div>
       <p>
         <%= day.text %>
       </p>

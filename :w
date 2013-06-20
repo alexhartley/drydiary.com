@@ -20,7 +20,8 @@
           <% end %>
         </div>
       </div>
-    <div id="quick-links" class="container-fluid">
+    </div>
+    <div id="main-window" class="container-fluid">
       <div id="account" class="pull-right">
         <% if user_signed_in? %>
           <%= link_to "account", edit_user_registration_path %> |
@@ -29,15 +30,9 @@
           <%= link_to "log in", new_user_session_path %>
         <% end %>
       </div>
-      </div>
-    </div>
-    <div id="main-window" class="container-fluid">
       <div class="clear"></div>
       <%= yield %>
     </div>
-    <footer>
-      <div>Copyright &copy; 2013-<%= Date.today.year %> Russell Dunphy</div>
-      <div>DRY DIARY is free sofware - contribute at <a href="http://github.com/rsslldnphy/drydiary.com">github</a>.</div>
-    </footer>
+    <footer>&copy; Russell Dunphy - dry diary is free sofware</footer>
   </body>
 </html>
