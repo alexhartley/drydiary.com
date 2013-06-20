@@ -13,7 +13,7 @@
       form {
         margin: 0px;
         padding: 0px;
-        display: inline;
+        float: right;
       }
       .tick {
         margin: -6px 0px 0px 0px;
@@ -28,6 +28,17 @@
       .tick.unticked {
         background: url(image-path('tick-grey.png')) no-repeat;
       }
+    }
+    .date-day-of-week {
+      display: inline-block;
+      width: 200px;
+      white-space: nowrap;
+      margin-right: 10px;
+    }
+    .date-rest-of-date {
+      display: inline-block;
+      white-space: nowrap;
+      margin-right: 10px;
     }
   }
   .edit-options {

@@ -7,7 +7,7 @@
   <% days.each do |day| %>
     <li class="day">
       <h2>
-        <%= day.date.strftime "%A %d %B %Y" %>
+        <span class="date-day-of-week"><%= day.date.strftime "%A" %></span>
         <% if current_user == user %>
           <%= form_for day do |f| %>
             <%= f.hidden_field :ticked, value: !day.ticked? %>
@@ -17,6 +17,7 @@
         <% else %>
           <div class="<%= tick_icon(day) %>"/>
         <% end %>
+        <span class="date-rest-of-date"><%= day.date.strftime "%d %B %Y" %></span>
       </h2>
       <p>
         <%= day.text %>
