@@ -11,4 +11,9 @@ class Day
   index({ user_id: 1 }, { unique: true })
 
   default_scope ->{ order_by date: :desc }
+
+  scope :successful, -> {
+    where(date: { "$ne" => Date.today }, ticked: true)
+  }
+
 end

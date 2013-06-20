@@ -5,7 +5,7 @@ class User
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+    :recoverable, :rememberable, :trackable, :validatable
 
   ## Database authenticatable
   field :email,              type: String, default: ""
@@ -44,4 +44,22 @@ class User
   field :username, type: String
 
   has_many :days
+
+  def consecutive_days
+    @consecutive_days ||= calculate_consecutive_days + (ticked_today? ? 1 : 0)
+  end
+
+  private
+
+  def calculate_consecutive_days
+    days.successful.inject([Date.yesterday, 0]) do |(required, count), day|
+      return count unless day.date == required && day.ticked?
+      [required.prev_day, count + 1]
+    end.last
+  end
+
+  def ticked_today?
+    days.where(date: Date.today).first.try(&:ticked?)
+  end
+
 end
