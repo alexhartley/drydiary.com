@@ -1,5 +1,6 @@
 #user-summary {
   text-align: justify;
+  padding: 20px 0px;
 }
 .days {
   list-style: none;
@@ -41,6 +42,7 @@
   }
   .tick-box {
     padding-top: 10px;
+    padding-left: 10px;
     float: right;
     width: 74px;
     form {

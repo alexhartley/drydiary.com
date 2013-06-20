@@ -20,15 +20,17 @@
           <% end %>
         </div>
       </div>
-    <div id="quick-links" class="container-fluid">
-      <div id="account" class="pull-right">
-        <% if user_signed_in? %>
-          <%= link_to "account", edit_user_registration_path %> |
-          <%= link_to "log out", destroy_user_session_path, method: 'delete' %>
-        <% else %>
-          <%= link_to "log in", new_user_session_path %>
-        <% end %>
-      </div>
+      <div id="quick-links">
+        <div class="container-fluid">
+          <div id="account" class="pull-right">
+            <% if user_signed_in? %>
+              <%= link_to "account", edit_user_registration_path %> |
+              <%= link_to "log out", destroy_user_session_path, method: 'delete' %>
+            <% else %>
+              <%= link_to "log in", new_user_session_path %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
     <div id="main-window" class="container-fluid">

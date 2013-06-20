@@ -1,6 +1,10 @@
-html, body {
-  height: 100%;
-  // background: url(image-path('paper_fibers.png'));
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin: 0 0 100px;
   color: #333;
 }
 
@@ -10,15 +14,23 @@ html, body {
 
 #title-bar {
   background: #574673;
+  .container-fluid {
+    margin: auto;
+    max-width: 900px;
+  }
   .brand {
-    padding-left: 22px;
+    padding-left: 20px;
     color: #fafafa;
     font-weight: bold;
   }
 }
 
 #main-window {
-  margin-top: 65px;
+  margin: auto;
+  margin-top: 75px;
+  height: auto;
+  max-width: 900px;
+  min-height: 100%;
   height: auto;
 }
 
@@ -33,7 +45,12 @@ html, body {
 }
 
 #quick-links {
-  background: #fafafa;
+  background: url(image-path('paper_fibers.png'));
+  width: 100%;
+  .container-fluid {
+    max-width: 900px;
+    margin: auto;
+  }
 }
 
 #account {
@@ -46,7 +63,7 @@ html, body {
 }
 
 #user-summary {
-  margin: 15px 2px;
+  margin: 15px 1px;
 }
 
 .hidden {
@@ -58,5 +75,11 @@ footer {
   color: #888;
   width: 100%;
   text-align: center;
-  padding: 10px 0px;
+  padding: 20px 0px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  height: 40px;
+  background: url(image-path('paper_fibers.png'));
+  position: absolute;
+  bottom: 0;
 }
