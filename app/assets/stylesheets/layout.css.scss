@@ -83,3 +83,7 @@ footer {
   position: absolute;
   bottom: 0;
 }
+
+@media (max-width: 510px){
+  .row-fluid .span6 { width: 100% !important; margin-left: 0px; }
+}

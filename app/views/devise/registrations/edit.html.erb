@@ -6,39 +6,39 @@
     </div>
   <% end %>
 
-<h2>Account Details</h2>
+  <h2>Account Details</h2>
 
-  <div class="row">
-  <div class="span5">
+  <div class="row-fluid">
+    <div class="span6">
 
-    <%= f.label :username %>
-    <%= f.text_field :username, autofocus: true %>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      Currently waiting confirmation for: <%= resource.unconfirmed_email %>
-    <% end %>
+      <%= f.label :username %>
+      <%= f.text_field :username, autofocus: true %>
 
-    <%= f.label :pronoun %>
-    <%= f.text_field :pronoun %>
+      <%= f.label :addiction, "\"I'm giving up...\"" %>
+      <%= f.text_field :addiction %>
+
+      <%= f.label :pronoun %>
+      <%= f.text_field :pronoun %>
+    </div>
+
+    <div class="span6">
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+      <% end %>
+      <%= f.label :password, "New password" %>
+      <%= f.password_field :password, autocomplete: "off", placeholder: "If you want to change it" %>
+
+      <%= f.label :password_confirmation, "New password confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+    </div>
   </div>
-  <div class="span4">
-
-    <%= f.label :addiction, "\"I'm giving up...\"" %>
-    <%= f.text_field :addiction %>
-    <hr>
-
-    <%= f.label :password, "New password" %>
-    <%= f.password_field :password, autocomplete: "off", placeholder: "If you want to change it" %>
-
-    <%= f.label :password_confirmation, "New password confirmation" %>
-    <%= f.password_field :password_confirmation %>
-
-  </div>
-  </div>
-    <hr>
-    <%= f.label :current_password, "Password" %>
-    <%= f.password_field :current_password, placeholder: "To confirm your changes" %>
+  <hr>
+  <%= f.label :current_password, "Password" %>
+  <%= f.password_field :current_password, placeholder: "To confirm your changes" %>
 
   <hr>
 
