@@ -8,6 +8,8 @@ $(function(){
   $('.select-with-other').change(function(){
     if ($(this).val() !== '') {
       $(this).next('.other-with-select').val('');
+    } else {
+      $(this).next('.other-with-select').focus();
     }
   });
 });

@@ -4,6 +4,13 @@
 .days {
   list-style: none;
   margin-left: 0px;
+  .li-header {
+    padding: 5px 15px;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 10px;
+    background: url(image-path('paper_fibers.png'));
+  }
   .day {
     margin: 10px 0px;
     padding: 5px;
