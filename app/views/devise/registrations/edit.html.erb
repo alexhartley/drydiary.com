@@ -12,34 +12,38 @@
     <div class="span6">
 
       <%= f.label :username %>
-      <%= f.text_field :username, autofocus: true %>
+      <%= f.text_field :username, autofocus: true, class: 'span12' %>
 
       <%= f.label :addiction, "\"I'm giving up...\"" %>
-      <%= f.text_field :addiction %>
+      <%= f.text_field :addiction, class: 'span12' %>
 
-      <%= f.label :pronoun %>
-      <%= f.text_field :pronoun %>
+      <%= f.label :pronoun, "Preferred pronoun" %>
+      <%= f.select :pronoun, pronoun_options_for_select, {}, class: 'span12 select-with-other' %>
+      <%= f.text_field :custom_pronoun, class: 'span12 other-with-select', placeholder: 'or enter your desired pronoun here' %>
     </div>
 
     <div class="span6">
 
       <%= f.label :email %>
-      <%= f.email_field :email %>
+      <%= f.email_field :email, class: 'span12' %>
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         Currently waiting confirmation for: <%= resource.unconfirmed_email %>
       <% end %>
       <%= f.label :password, "New password" %>
-      <%= f.password_field :password, autocomplete: "off", placeholder: "If you want to change it" %>
+      <%= f.password_field :password, autocomplete: "off", placeholder: "If you want to change it", class: 'span12' %>
 
       <%= f.label :password_confirmation, "New password confirmation" %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.password_field :password_confirmation, class: 'span12' %>
 
     </div>
   </div>
-  <hr>
-  <%= f.label :current_password, "Password" %>
-  <%= f.password_field :current_password, placeholder: "To confirm your changes" %>
-
+    <hr>
+  <div class="row-fluid">
+    <div class="span6">
+      <%= f.label :current_password, "Password" %>
+      <%= f.password_field :current_password, placeholder: "To confirm your changes", class: 'span12' %>
+    </div>
+  </div>
   <hr>
 
   <div class="actions">

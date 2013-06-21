@@ -7,6 +7,7 @@ gem 'mongo'
 gem 'bson_ext'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'devise', github: 'plataformatec/devise'
+gem 'optional'
 gem 'fendhal'
 
 gem 'sass-rails', '~> 4.0.0.rc1'

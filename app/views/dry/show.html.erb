@@ -1,8 +1,8 @@
 <h1 id="user-summary">
   <%= user.username %>
-  <small>is on their</small>
+  <small>is on <%= user.preferred_pronoun %></small>
   <%= user.consecutive_days.ordinalize %>
-  <small>day without drinking</small></h1>
+  <small>day without <%= user.addiction %></small></h1>
 <ul class="days">
   <% days.each do |day| %>
     <li class="day">

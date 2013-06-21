@@ -41,17 +41,23 @@ class User
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
 
-  field :username,  type: String
-  field :pronoun,   type: String
-  field :addiction, type: String
+  field :username,         type: String
+  field :pronoun,          type: String, default: 'their'
+  field :custom_pronoun,   type: String
+  field :addiction,        type: String
 
   has_many :days
 
   validates_uniqueness_of :username
-  validates_presence_of :username, :pronoun, :addiction
+  validates_presence_of :username, :addiction
+  validates_presence_of :pronoun, if: ->{ custom_pronoun.blank? }
 
   def consecutive_days
     @consecutive_days ||= calculate_consecutive_days + (ticked_today? ? 1 : 0)
+  end
+
+  def preferred_pronoun
+    Option[custom_pronoun].reject(&:blank?).value_or pronoun
   end
 
   private
