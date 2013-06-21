@@ -1,0 +1,49 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <% resource.errors.values.flatten.each do |error| %>
+    <div class="alert alert-error">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <strong class="error-type"><%= I18n.t :error, scope: :form %></strong> <%= error %>
+    </div>
+  <% end %>
+
+<h2>Account Details</h2>
+
+  <div class="row">
+  <div class="span5">
+
+    <%= f.label :username %>
+    <%= f.text_field :username, autofocus: true %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+    <% end %>
+
+    <%= f.label :pronoun %>
+    <%= f.text_field :pronoun %>
+  </div>
+  <div class="span5">
+
+    <%= f.label :addiction, "\"I'm giving up...\"" %>
+    <%= f.text_field :addiction %>
+    <hr>
+
+    <%= f.label :password, "New password" %>
+    <%= f.password_field :password, autocomplete: "off", placeholder: "If you want to change it" %>
+
+    <%= f.label :password_confirmation, "New password confirmation" %>
+    <%= f.password_field :password_confirmation %>
+
+  </div>
+  </div>
+    <hr>
+    <%= f.label :current_password, "Password" %>
+    <%= f.password_field :current_password, placeholder: "To confirm your changes" %>
+
+  <hr>
+
+  <div class="actions">
+    <%= f.submit "Update", class: 'btn btn-primary' %>
+    <%= link_to 'Cancel', '/', class: 'btn' %>
+  </div>
+<% end %>

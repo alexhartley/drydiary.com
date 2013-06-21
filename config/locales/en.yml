@@ -20,4 +20,22 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  form:
+    error: "Not quite!"
+  mongoid:
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              taken: "Unfortunately, that username has already been taken."
+            username:
+              blank: "Please choose a username."
+            addiction:
+              blank: "You need to say what you're giving up!"
+            pronoun:
+              blank: "Please choose a pronoun - just so we know how to refer to you!"
+            current_password:
+              blank: "You need to enter your password."
+            password_confirmation:
+              confirmation: "Your passwords don't match."

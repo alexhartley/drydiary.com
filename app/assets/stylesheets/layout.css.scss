@@ -16,7 +16,7 @@ body {
   background: #574673;
   .container-fluid {
     margin: auto;
-    max-width: 900px;
+    max-width: 800px;
   }
   .brand {
     padding-left: 20px;
@@ -27,9 +27,9 @@ body {
 
 #main-window {
   margin: auto;
-  margin-top: 75px;
+  margin-top: 80px;
   height: auto;
-  max-width: 900px;
+  max-width: 800px;
   min-height: 100%;
   height: auto;
 }
@@ -48,7 +48,7 @@ body {
   background: url(image-path('paper_fibers.png'));
   width: 100%;
   .container-fluid {
-    max-width: 900px;
+    max-width: 800px;
     margin: auto;
   }
 }
