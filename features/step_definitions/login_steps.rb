@@ -22,6 +22,7 @@ end
 
 Given /^I have signed in$/ do
   steps %{
+    * I am on the homepage
     * I go to the sign in page
     * I fill in my email and password
     * I am signed in

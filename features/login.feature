@@ -1,5 +1,7 @@
 Feature:
-  Signing in and out
+  In order to use the app
+  As a registered user
+  I want to be able to sign in and out
 
   Background:
     When    I am on the homepage
