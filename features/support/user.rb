@@ -6,4 +6,11 @@ Before do
     pronoun:  'their',
     addiction: 'catnip'
   )
+  User.create!(
+    email: 'dogface@drydiary.com',
+    username: 'dogface',
+    password: 'test1234',
+    pronoun:  'their',
+    addiction: 'fetch'
+  )
 end

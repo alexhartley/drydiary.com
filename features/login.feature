@@ -16,3 +16,7 @@ Feature:
     When    I choose to sign out
     Then    I am taken back to the homepage
     And     I am no longer signed in
+
+  Scenario: Incorrect password
+    When    I get my password wrong
+    Then    I am informed of my error

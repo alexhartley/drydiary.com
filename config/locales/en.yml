@@ -35,7 +35,10 @@ en:
               blank: "You need to say what you're giving up!"
             pronoun:
               blank: "Please choose a pronoun - just so we know how to refer to you!"
+            password:
+              invalid: "You entered the wrong password."
             current_password:
               blank: "You need to enter your password."
+              invalid: "You entered the wrong password."
             password_confirmation:
               confirmation: "Your passwords don't match."
