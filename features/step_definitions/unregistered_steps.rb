@@ -22,7 +22,9 @@ end
 
 When(/^I visit a user's post$/) do
   step "I visit a user's diary"
-  click_on 'view'
+  within first('.day') do
+    click_on 'view'
+  end
 end
 
 Then(/^I can see the post$/) do
