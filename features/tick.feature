@@ -17,3 +17,15 @@ Feature:
     When    I untick it
     Then    it goes back to being grey
     And     my day count decreases by one
+
+  Scenario: Ticking a date while editing
+    Given   I am editing an unticked diary entry
+    When    I tick it
+    Then    it goes green
+    And     I am still on the edit screen
+
+  Scenario: Ticking a date while editing
+    Given   I am editing a ticked diary entry
+    When    I untick it
+    Then    it goes back to being grey
+    And     I am still on the edit screen

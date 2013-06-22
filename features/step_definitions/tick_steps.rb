@@ -14,21 +14,15 @@ Given(/^today's date is ticked$/) do
 end
 
 When(/^I (?:untick|tick) it$/) do
-  within page.first('li.day') do
-    first('.tick').click
-  end
+  first('.tick').click
 end
 
 Then(/^it goes green$/) do
-  within first('li.day') do
-    should have_selector '.ticked'
-  end
+  first('.tick')['class'].should include ' ticked'
 end
 
 Then(/^it goes back to being grey/) do
-  within first('li.day') do
-    should have_selector '.unticked'
-  end
+  first('.tick')['class'].should include ' unticked'
 end
 
 Then(/^my day count increases by one$/) do
@@ -37,4 +31,25 @@ end
 
 Then(/^my day count decreases by one$/) do
   page.should have_text 'catface is on their 0th day without catnip'
+end
+
+Given(/^I am editing a ticked diary entry$/) do
+  within first('li.day') do
+    first('.tick').click
+    click_on 'edit'
+  end
+  first('.tick')['class'].should include ' ticked'
+  fill_in 'wmd-input', with: 'The desire for catnip is starting to loosen its grip'
+end
+
+Given(/^I am editing an unticked diary entry$/) do
+  within first('li.day') do
+    click_on 'edit'
+  end
+  first('.tick')['class'].should include ' unticked'
+  fill_in 'wmd-input', with: 'The desire for catnip is starting to loosen its grip'
+end
+
+Then(/^I am still on the edit screen$/) do
+  page.should have_text 'The desire for catnip is starting to loosen its grip'
 end
