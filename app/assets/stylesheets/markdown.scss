@@ -1,5 +1,11 @@
+h4{
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
 #wmd-preview {
   display: none;
+  margin-top: 0px;
 }
 
 @media (max-width: 610px){
