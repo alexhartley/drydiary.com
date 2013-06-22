@@ -1,10 +1,6 @@
 class DaysController < ApplicationController
   before_filter :authenticate_user!
 
-  def new
-    New.new(self).action
-  end
-
   def edit
     Entry.new(self).action
   end
