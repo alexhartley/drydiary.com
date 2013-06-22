@@ -9,7 +9,7 @@
 <%= render_tick day %>
 <h3><%= day.user.username %></h3>
 <p>
-  <%= day.text || content_tag(:span, class: 'ghost') { ghost_text(day) } %>
+  <%= day.text.present? ? day.text : content_tag(:span, class: 'ghost') { ghost_text(day) } %>
 </p>
   <% if current_user == day.user %>
     <ul class="entry-options">
