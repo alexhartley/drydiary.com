@@ -1,5 +1,5 @@
 class DaysController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, only: [:create, :update, :edit]
 
   def edit
     Entry.new(self).action
