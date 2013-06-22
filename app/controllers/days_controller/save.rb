@@ -1,17 +1,13 @@
 class DaysController < ApplicationController
-  class Update < Fendhal::Action
+  class Save < Fendhal::Action
 
     def action
-      day.update_attributes(day_params) ? success : failure
+      day.update_attributes(day_params) and redirect_to redirect_url
     end
 
     private
 
-    def success
-      redirect_to success_url
-    end
-
-    def success_url
+    def redirect_url
       !tick? && request.referrer.match(/\/edit$/) ? '/' : :back
     end
 
@@ -19,12 +15,12 @@ class DaysController < ApplicationController
       !params[:tick].nil?
     end
 
-    def failure
-      render action: 'edit'
+    def day
+      @day ||= Day.where(user: current_user, date: date).find_or_initialize_by
     end
 
-    def day
-      @day ||= Day.find(params[:id])
+    def date
+      day_params.fetch(:date)
     end
 
     def day_params

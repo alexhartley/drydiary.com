@@ -10,11 +10,11 @@ class DaysController < ApplicationController
   end
 
   def create
-    Create.new(self).action
+    Save.new(self).action
   end
 
   def update
-    Update.new(self).action
+    Save.new(self).action
   end
 
 end
