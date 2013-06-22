@@ -8,7 +8,11 @@ class DaysController < ApplicationController
     private
 
     def success
-      redirect_to :back
+      redirect_to success_url
+    end
+
+    def success_url
+      request.referrer.match(/\/edit$/) ? '/' : :back
     end
 
     def failure
