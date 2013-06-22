@@ -12,7 +12,11 @@ class DaysController < ApplicationController
     end
 
     def success_url
-      request.referrer.match(/\/edit$/) ? '/' : :back
+      !tick? && request.referrer.match(/\/edit$/) ? '/' : :back
+    end
+
+    def tick?
+      !params[:tick].nil?
     end
 
     def failure

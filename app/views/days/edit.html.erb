@@ -6,15 +6,23 @@
       <div class="date-rest-of-date"><%= day.date.strftime "%Y" %></div>
     </div>
   </h2>
-  <%= render_tick day %>
-  <h3><%= day.user.username %></h3>
   <%= form_for(day) do |f| %>
+    <div class="tick-box">
+      <%= f.hidden_field :ticked, id: dom_id(day, :ticked), value: !day.ticked? %>
+      <%= f.hidden_field :date, id: dom_id(day, :date) %>
+      <%= f.submit '', name: 'tick', class: tick_icon_class(day) %>
+    </div>
+
+    <h3><%= day.user.username %></h3>
+
     <%= f.hidden_field :date %>
+
     <div class="wmd-panel">
       <div id="wmd-button-bar"></div>
       <%= f.text_area :text, id: 'wmd-input', class: 'wmd-input' %>
     </div>
     <div id="wmd-preview" class="wmd-panel wmd-preview"></div>
+
     <div class="actions">
       <%= f.submit "Update Entry", class: 'btn btn-primary' %>
       <%= link_to "Cancel", :back, class: 'btn' %>
