@@ -1,3 +1,5 @@
+require 'consecutive_days_calculator'
+
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
@@ -53,24 +55,15 @@ class User
   validates_presence_of :pronoun, if: ->{ custom_pronoun.blank? }
 
   def consecutive_days
-    @consecutive_days ||= calculate_consecutive_days + (ticked_today? ? 1 : 0)
+    @consecutive_days ||= ConsecutiveDaysCalculator.new(self).calculate
   end
 
   def preferred_pronoun
     Option[custom_pronoun].reject(&:blank?).value_or pronoun
   end
 
-  private
-
-  def calculate_consecutive_days
-    days.successful.inject([Date.yesterday, 0]) do |(required, count), day|
-      return count unless day.date == required && day.ticked?
-      [required.prev_day, count + 1]
-    end.last
-  end
-
-  def ticked_today?
-    days.where(date: Date.today).first.try(&:ticked?)
+  def today
+    days.where(date: Date.today).find_or_initialize_by
   end
 
 end

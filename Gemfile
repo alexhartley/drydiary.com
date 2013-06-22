@@ -32,6 +32,7 @@ group :development, :test, :cucumber do
   gem "cucumber-rails", "~> 1.3.0", require: false
   gem "database_cleaner", "~> 0.9.1"
   gem "launchy", "~> 2.1.2"
+  gem "simplecov"
 end
 
 group :production do
