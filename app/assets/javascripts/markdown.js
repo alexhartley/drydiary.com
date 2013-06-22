@@ -1,0 +1,8 @@
+$(function(){
+  $('.wmd-input').each(function(){
+    var converter = Markdown.getSanitizingConverter();
+    var editor = new Markdown.Editor(converter);
+    editor.run();
+    $('#wmd-preview').show();
+  });
+});

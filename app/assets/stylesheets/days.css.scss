@@ -12,6 +12,8 @@
     background: url(image-path('paper_fibers.png'));
   }
   .day {
+    h1, h2, h3, h4, h5, h6 { padding: 0px 5px }
+    overflow: hidden;
     margin: 10px 0px;
     padding: 10px 5px;
     box-sizing: border-box;
@@ -19,7 +21,11 @@
     border-radius: 10px;
     border: 5px solid #efefef;
     min-height: 100px;
+    .date-container {
+      margin-bottom: 10px;
+    }
     .date-day-of-week {
+    font-family: 'Roboto', sans-serif;
       font-size: 1.75em;
       font-weight: bold;
       width: 200px;
@@ -31,6 +37,7 @@
       }
     }
     .date-rest-of-date {
+    font-family: 'Roboto', sans-serif;
       font-size: 1.75em;
       font-weight: bold;
       margin: 10px 5px;
@@ -42,11 +49,9 @@
     }
     p {
       padding: 5px;
+      font-size: 1.2em;
       text-align: justify;
     }
-  }
-  p {
-    padding-left: 2px;
   }
 }
 .date-header {
@@ -55,16 +60,18 @@
   }
 }
 
+.ghost { color: #aaa; }
+
 #show-day {
   box-sizing: border-box;
 
   h3     { padding-bottom: 0px; }
-  .ghost { color: #aaa; }
   p {
     font-size: 1.2em;
     text-align: justify;
   }
   .entry-options {
+    text-align: center;
     margin-right: -5px;
     li { margin-left: 2px; }
   }

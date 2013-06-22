@@ -5,17 +5,15 @@
     <div class="date-rest-of-date"><%= day.date.strftime "%d %B" %></div>
     <div class="date-rest-of-date"><%= day.date.strftime "%Y" %></div>
   </div>
-  <p>
-    <%= day.text %>
-  </p>
-  <% if current_user == day.user %>
-    <ul class="entry-options">
-      <li>
-        <%= link_to "view", view_entry_path(day) %>
-      </li>
+  <%== entry day %>
+  <ul class="entry-options">
+    <li>
+      <%= link_to "view", view_entry_path(day) %>
+    </li>
+    <% if current_user == day.user %>
       <li>
         <%= link_to "edit", edit_entry_path(day) %>
       </li>
-    </ul>
-  <% end %>
+    <% end %>
+  </ul>
 </li>

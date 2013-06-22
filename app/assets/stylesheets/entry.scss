@@ -1,12 +1,14 @@
 .entry-options {
+    min-width: 74px;
+    float: right;
   clear: right;
   list-style: none;
   margin-right: 0px;
-  text-align: right;
+  text-align: center;
   li {
     display: inline-block;
     margin: 0px;
-    padding: 0px 6px;
+    padding: 0px 2px;
   }
 }
 

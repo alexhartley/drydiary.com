@@ -1,5 +1,5 @@
 Given(/^today's date has no text$/) do
-  first('li.day p').text.should be_empty
+  first('li.day p').should_not be_present
 end
 
 When(/^I choose to view the day$/) do
@@ -16,7 +16,7 @@ When(/^I add an entry for that day$/) do
   within first('li.day') do
     click_on 'edit'
   end
-  fill_in 'day_text', with: 'Narrowly avoided a whole bunch of catnip today :-s'
+  fill_in 'wmd-input', with: 'Narrowly avoided a whole bunch of catnip today :-s'
   click_on "Update Entry"
 end
 
@@ -37,7 +37,7 @@ When(/^I edit the entry for that day$/) do
   within first('li.day') do
     click_on 'edit'
   end
-  fill_in 'day_text', with: 'The temptation of catnip was strong but I resisted'
+  fill_in 'wmd-input', with: 'The temptation of catnip was strong but I resisted'
   click_on "Update Entry"
 end
 
