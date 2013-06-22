@@ -28,7 +28,7 @@
               <%= link_to "diary", "/#{current_user.username}" %> |
               <%= link_to "account", edit_user_registration_path %> |
               <%= link_to "sign out", destroy_user_session_path, method: 'delete' %>
-            <% else %>
+            <% elsif request.path != '/users/sign_in' %>
               <%= link_to "sign in", new_user_session_path %>
             <% end %>
           </div>
