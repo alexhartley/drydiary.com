@@ -24,6 +24,7 @@
         <div class="container-fluid">
           <div id="account" class="pull-right">
             <% if user_signed_in? %>
+              <%= link_to "diary", "/#{current_user.username}" %> |
               <%= link_to "account", edit_user_registration_path %> |
               <%= link_to "sign out", destroy_user_session_path, method: 'delete' %>
             <% else %>
