@@ -59,7 +59,7 @@ class User
   end
 
   def preferred_pronoun
-    Option[custom_pronoun].reject(&:blank?).value_or pronoun
+    Option[pronoun].reject(&:blank?).value_or custom_pronoun
   end
 
   def today

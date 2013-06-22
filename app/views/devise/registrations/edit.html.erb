@@ -15,7 +15,7 @@
       <%= f.text_field :username, autofocus: true, class: 'span12' %>
 
       <%= f.label :addiction, "\"I'm giving up...\"" %>
-      <%= f.text_field :addiction, class: 'span12' %>
+      <%= f.text_field :addiction, class: 'span12', placeholder: 'drinking, smoking... whatever you want to stop' %>
 
       <%= f.label :pronoun, "Preferred pronoun" %>
       <%= f.select :pronoun, pronoun_options_for_select, {}, class: 'span12 select-with-other' %>
@@ -30,7 +30,7 @@
         Currently waiting confirmation for: <%= resource.unconfirmed_email %>
       <% end %>
       <%= f.label :password, "New password" %>
-      <%= f.password_field :password, autocomplete: "off", placeholder: "If you want to change it", class: 'span12' %>
+      <%= f.password_field :password, autocomplete: "off", placeholder: "only if you want to change it", class: 'span12' %>
 
       <%= f.label :password_confirmation, "New password confirmation" %>
       <%= f.password_field :password_confirmation, class: 'span12' %>
@@ -41,7 +41,7 @@
   <div class="row-fluid">
     <div class="span6">
       <%= f.label :current_password, "Password" %>
-      <%= f.password_field :current_password, placeholder: "To confirm your changes", class: 'span12' %>
+      <%= f.password_field :current_password, placeholder: "to confirm your changes", class: 'span12' %>
     </div>
   </div>
   <hr>
