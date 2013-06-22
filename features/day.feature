@@ -13,5 +13,10 @@ Feature:
 
   Scenario: Editing a day I haven't edited yet
     Given   today's date has no text
-    When    I edit the entry for that day
+    When    I add an entry for that day
     Then    The text I enter appears as part of the day
+
+  Scenario: Editing a day I've already edited
+    Given   I have already made an entry for today
+    When    I edit the entry for that day
+    Then    The new text I have entered appears as part of the day
