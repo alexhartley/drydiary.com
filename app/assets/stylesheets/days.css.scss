@@ -56,7 +56,6 @@
 }
 
 #show-day {
-  padding-right: 5px;
   box-sizing: border-box;
 
   h3     { padding-bottom: 5px; }
@@ -66,5 +65,12 @@
     text-align: justify;
     padding-right: 6px;
   }
-  .entry-options li { margin-left: 2px; }
+  .entry-options {
+    margin-right: -5px;
+    li { margin-left: 2px; }
+  }
+  .tick { margin-right: -5px }
+}
+#edit-day {
+  .tick { margin-right: -5px }
 }
