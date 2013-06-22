@@ -13,7 +13,7 @@ class ConsecutiveDaysCalculator
   def consecutive
     cursor.inject([yesterday, 0]) do |(current, count), day|
       return count unless day.date == current && day.ticked?
-      [required.prev_day, count + 1]
+      [current.prev_day, count + 1]
     end.last
   end
 
