@@ -1,40 +1,4 @@
 <ul class="days">
-  <li class="li-header">
-    <h1 id="user-summary">
-      <%= user.username %>
-      <small>is on <%= user.preferred_pronoun %></small>
-      <%= user.consecutive_days.ordinalize %>
-      <small>day without <%= user.addiction %></small>
-    </h1>
-  </li>
-  <% days.each do |day| %>
-    <li class="day">
-      <div class="tick-box">
-        <% if current_user == user %>
-          <%= form_for day do |f| %>
-            <%= f.hidden_field :ticked, id: dom_id(day, :ticked), value: !day.ticked? %>
-            <%= f.hidden_field :date, id: dom_id(day, :date) %>
-            <%= f.submit '', class: tick_icon(day) %>
-          <% end %>
-        <% else %>
-          <div class="<%= tick_icon(day) %>"></div>
-        <% end %>
-      </div>
-      <div class="date-container">
-        <div class="date-day-of-week"><%= day.date.strftime "%A" %></div>
-        <div class="date-rest-of-date"><%= day.date.strftime "%d %B" %></div>
-        <div class="date-rest-of-date"><%= day.date.strftime "%Y" %></div>
-      </div>
-      <p>
-        <%= day.text %>
-      </p>
-        <% if current_user == user %>
-      <ul class="edit-options">
-        <li>
-          <%= link_to "Edit", new_or_edit_day_path(day) %>
-        </li>
-      </ul>
-        <% end %>
-    </li>
-  <% end %>
+  <%= render 'summary', user: user %>
+  <%= render days %>
 </ul>

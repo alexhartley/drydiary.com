@@ -1,0 +1,7 @@
+<div class="tick-box">
+  <%= form_for day do |f| %>
+    <%= f.hidden_field :ticked, id: dom_id(day, :ticked), value: !day.ticked? %>
+    <%= f.hidden_field :date, id: dom_id(day, :date) %>
+    <%= f.submit '', class: tick_icon_class(day) %>
+  <% end %>
+</div>

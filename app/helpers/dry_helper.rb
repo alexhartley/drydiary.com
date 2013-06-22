@@ -5,8 +5,13 @@ module DryHelper
     else new_day_path(day, date: day.date) end
   end
 
-  def tick_icon(day)
+  def tick_icon_class(day)
     if day.ticked? then 'pull-right tick ticked'
     else 'pull-right tick unticked' end
   end
+
+  def render_tick(day)
+    render (current_user == day.user ? 'tick' : 'tick_read_only'), day: day
+  end
+
 end

@@ -1,0 +1,18 @@
+<li class="day">
+  <%= render_tick day %>
+  <div class="date-container">
+    <div class="date-day-of-week"><%= day.date.strftime "%A" %></div>
+    <div class="date-rest-of-date"><%= day.date.strftime "%d %B" %></div>
+    <div class="date-rest-of-date"><%= day.date.strftime "%Y" %></div>
+  </div>
+  <p>
+    <%= day.text %>
+  </p>
+  <% if current_user == day.user %>
+    <ul class="edit-options">
+      <li>
+        <%= link_to "Edit", new_or_edit_day_path(day) %>
+      </li>
+    </ul>
+  <% end %>
+</li>
