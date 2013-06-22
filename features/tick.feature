@@ -6,8 +6,14 @@ Feature:
   Background:
     Given   I have signed in
 
-  Scenario: I tick today's date
+  Scenario: Ticking a date
     Given   today's date is unticked
     When    I tick it
     Then    it goes green
     And     my day count increases by one
+
+  Scenario: Unticking a date
+    Given   today's date is ticked
+    When    I untick it
+    Then    it goes back to being grey
+    And     my day count decreases by one

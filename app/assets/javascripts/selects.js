@@ -7,9 +7,9 @@ $(function(){
 
   $('.select-with-other').change(function(){
     if ($(this).val() !== '') {
-      $(this).next('.other-with-select').val('');
+      $(this).next('.other-with-select').hide();
     } else {
-      $(this).next('.other-with-select').focus();
+      $(this).next('.other-with-select').show().focus();
     }
-  });
+  }).change(); // make sure we're in the right state on initialization
 });
