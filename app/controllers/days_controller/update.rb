@@ -8,7 +8,7 @@ class DaysController < ApplicationController
     private
 
     def success
-      redirect_to '/'
+      redirect_to :back
     end
 
     def failure

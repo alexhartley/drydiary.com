@@ -1,3 +1,4 @@
+@import "colors";
 html {
   position: relative;
   min-height: 100%;
@@ -17,7 +18,7 @@ h2 {
 }
 
 #title-bar {
-  background: #574673;
+  background: $dryDiaryPurple;
   .container-fluid {
     margin: auto;
     max-width: 700px;

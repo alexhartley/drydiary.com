@@ -1,13 +1,15 @@
 module DryHelper
 
-  def new_or_edit_day_path(day)
-    if day.persisted? then edit_day_path(day)
-    else new_day_path(day, date: day.date) end
+  def edit_entry_path(day)
+    "/#{day.user.username}/#{day.date.strftime "%Y/%m/%d/edit"}"
+  end
+
+  def view_entry_path(day)
+    "/#{day.user.username}/#{day.date.strftime "%Y/%m/%d"}"
   end
 
   def tick_icon_class(day)
-    if day.ticked? then 'pull-right tick ticked'
-    else 'pull-right tick unticked' end
+    "pull-right tick #{day.ticked? ? 'ticked' : 'unticked'}"
   end
 
   def render_tick(day)

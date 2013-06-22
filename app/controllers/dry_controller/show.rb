@@ -9,7 +9,7 @@ class DryController < ApplicationController
     private
 
     def user
-      @user ||= User.where(username: params[:id]).one
+      @user ||= User.where(username: params[:username]).one
     end
 
     def days

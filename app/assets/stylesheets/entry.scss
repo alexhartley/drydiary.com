@@ -1,0 +1,19 @@
+.entry-options {
+  clear: right;
+  list-style: none;
+  margin-right: 0px;
+  text-align: right;
+  li {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px 6px;
+  }
+}
+
+#edit-day textarea {
+  min-height: 300px;
+  width: 100%;
+  display: block;
+  resize: vertical;
+  box-sizing: border-box;
+}

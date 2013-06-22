@@ -13,7 +13,7 @@
   }
   .day {
     margin: 10px 0px;
-    padding: 5px;
+    padding: 10px 5px;
     box-sizing: border-box;
     width: 100%;
     border-radius: 10px;
@@ -44,43 +44,27 @@
       padding: 5px;
       text-align: justify;
     }
-    .edit-options {
-      padding: 0px 5px;
-    }
-  }
-  .tick-box {
-    padding-top: 10px;
-    padding-left: 10px;
-    float: right;
-    width: 74px;
-    form {
-      margin: 0px;
-      padding: 0px;
-    }
-  }
-  .tick {
-    margin: -6px 0px 10px 0px;
-    border: 0px none;
-    padding: 0px;
-    height: 74px;
-    width: 74px;
-  }
-  .tick.ticked {
-    background: url(image-path('tick-medium.png')) no-repeat;
-  }
-  .tick.unticked {
-    background: url(image-path('tick-grey.png')) no-repeat;
-  }
-  .edit-options {
-    list-style: none;
-    margin-left: 0px;
-    padding-left: 2px;
-    li {
-      display: inline-block;
-    }
   }
   p {
     padding-left: 2px;
   }
 }
+.date-header {
+  .date-day-of-week, .date-rest-of-date {
+    display: inline-block;
+  }
+}
 
+#show-day {
+  padding-right: 5px;
+  box-sizing: border-box;
+
+  h3     { padding-bottom: 5px; }
+  .ghost { color: #aaa; }
+  p {
+    font-size: 1.2em;
+    text-align: justify;
+    padding-right: 6px;
+  }
+  .entry-options li { margin-left: 2px; }
+}

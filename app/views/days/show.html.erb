@@ -1,7 +1,23 @@
-<ul>
-  <% @days.each do |day| %>
-    <li><%= day.date %> - <%= day.text %></li>
+<div id="show-day">
+<h2>
+<div class="date-header">
+  <div class="date-day-of-week"><%= day.date.strftime "%A" %></div>
+  <div class="date-rest-of-date"><%= day.date.strftime "%d %B" %></div>
+  <div class="date-rest-of-date"><%= day.date.strftime "%Y" %></div>
+</div>
+</h2>
+<%= render_tick day %>
+<h3><%= day.user.username %></h3>
+<p>
+  <%= day.text || content_tag(:span, class: 'ghost') { ghost_text(day) } %>
+</p>
+  <% if current_user == day.user %>
+    <ul class="entry-options">
+      <li>
+        <span class="ghost">view</span>
+      <li>
+        <%= link_to "edit", edit_entry_path(day) %>
+      </li>
+    </ul>
   <% end %>
-</ul>
-
-<%= render 'form' %>
+</div>

@@ -8,7 +8,9 @@ class Day
 
   belongs_to :user
 
-  index({ user_id: 1 }, { unique: true })
+  validates_uniqueness_of :date, scope: :user_id
+
+  index({ date: 1, user_id: 1 }, { unique: true })
 
   default_scope ->{ order_by date: :desc }
 

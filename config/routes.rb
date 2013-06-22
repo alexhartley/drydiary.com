@@ -2,12 +2,11 @@ DrydiaryCom::Application.routes.draw do
 
   devise_for :users, :controllers => { :registrations => "registrations" }
 
-  resource :dry
+  resources :days, only: [:create, :update]
 
-  resources :days, only: [:new, :edit, :create, :update]
+  get ':username' => 'dry#show'
+  get ':username/:year/:month/:day' => 'days#show'
+  get ':username/:year/:month/:day/edit' => 'days#edit'
 
   root 'dry#index'
-
-  get ':id' => 'dry#show'
-
 end

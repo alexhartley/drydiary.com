@@ -1,0 +1,23 @@
+.tick-box {
+  padding-top: 10px;
+  padding-left: 10px;
+  float: right;
+  form {
+    margin: 0px;
+    padding: 0px;
+  }
+}
+.tick {
+  margin: -6px 0px 10px 0px;
+  border: 0px none;
+  padding: 0px;
+  height: 74px;
+  width: 74px !important;
+}
+.tick.ticked {
+  background: url(image-path('tick-medium.png')) no-repeat;
+}
+.tick.unticked {
+  background: url(image-path('tick-grey.png')) no-repeat;
+}
+

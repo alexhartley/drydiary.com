@@ -9,9 +9,12 @@
     <%= day.text %>
   </p>
   <% if current_user == day.user %>
-    <ul class="edit-options">
+    <ul class="entry-options">
       <li>
-        <%= link_to "Edit", new_or_edit_day_path(day) %>
+        <%= link_to "view", view_entry_path(day) %>
+      </li>
+      <li>
+        <%= link_to "edit", edit_entry_path(day) %>
       </li>
     </ul>
   <% end %>

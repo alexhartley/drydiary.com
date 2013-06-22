@@ -6,7 +6,11 @@ class DaysController < ApplicationController
   end
 
   def edit
-    Edit.new(self).action
+    Entry.new(self).action
+  end
+
+  def show
+    Entry.new(self).action
   end
 
   def create
