@@ -3,7 +3,7 @@ When(/^I visit the homepage$/) do
 end
 
 Then(/^I am welcomed$/) do
-  page.should have_content 'welcome to dry diary'
+  page.should have_content 'Welcome to Dry Diary'
 end
 
 When(/^I visit a user's diary$/) do

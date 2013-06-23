@@ -29,6 +29,8 @@ en:
           attributes:
             username:
               taken: "Unfortunately, that username has already been taken."
+            email:
+              blank: "We need your email address to confirm the account."
             username:
               blank: "Please choose a username."
             addiction:
@@ -36,6 +38,7 @@ en:
             pronoun:
               blank: "Please choose a pronoun - just so we know how to refer to you!"
             password:
+              blank: "Please choose a password."
               invalid: "You entered the wrong password."
             current_password:
               blank: "You need to enter your password."

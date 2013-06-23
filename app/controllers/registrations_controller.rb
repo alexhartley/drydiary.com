@@ -23,6 +23,7 @@ class RegistrationsController < Devise::RegistrationsController
       :username,
       :email,
       :password,
+      :password_confirmation,
       :pronoun,
       :custom_pronoun,
       :addiction

@@ -1,18 +1,47 @@
-<h2>Sign up</h2>
+<div class="hero-unit">
+  <h1>Welcome to <br/>Dry Diary</h1>
+  <hr>
+  <p>Got something you want to give up?</p>
+  <p>Start a Dry Diary to mark the days as you stop drinking, smoking - or whatever you want to quit.</p>
+</div>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit "Sign up" %></div>
+<% resource.errors.values.flatten.each do |error| %>
+  <div class="alert alert-error">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <strong class="error-type"><%= I18n.t :error, scope: :form %></strong> <%= error %>
+  </div>
 <% end %>
+<h4>Create an account</h4>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div class="row-fluid">
+    <div class="span6">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, class: 'span12' %>
 
-<%= render "devise/shared/links" %>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'span12' %>
+
+
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, class: 'span12' %>
+
+    </div>
+    <div class="span6">
+      <%= f.label :username, "Desired username" %>
+      <%= f.text_field :username, class: 'span12' %>
+
+      <%= f.label :addiction, %{"I'm giving up..."} %>
+      <%= f.text_field :addiction, class: 'span12' %>
+
+      <%= f.label :pronoun, "Preferred pronoun" %>
+      <%= f.select :pronoun, pronoun_options_for_select, {}, class: 'span12 select-with-other' %>
+      <%= f.text_field :custom_pronoun, class: 'span12 other-with-select', placeholder: 'enter your desired pronoun here' %>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="devise-links">
+      <%= render "devise/shared/links" %>
+    </div>
+    <%= f.submit "Sign up", class: 'btn btn-primary' %>
+  </div>
+<% end %>

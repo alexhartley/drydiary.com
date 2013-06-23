@@ -2,6 +2,11 @@
   line-height: 1.3em;
   margin: 10px 1px;
   font-family: 'Roboto', sans-serif;
+
+  @media (max-width: 480px) {
+    font-size: 2.3em;
+    small { font-size: 0.7em; }
+  }
 }
 
 .days {
@@ -31,7 +36,7 @@
       margin-bottom: 10px;
     }
     .date-day-of-week {
-    font-family: 'Roboto', sans-serif;
+      font-family: 'Roboto', sans-serif;
       font-size: 1.75em;
       font-weight: bold;
       width: 200px;
@@ -43,7 +48,7 @@
       }
     }
     .date-rest-of-date {
-    font-family: 'Roboto', sans-serif;
+      font-family: 'Roboto', sans-serif;
       font-size: 1.75em;
       font-weight: bold;
       margin: 10px 5px;
@@ -55,7 +60,6 @@
     }
     p {
       padding: 5px;
-      font-size: 1.2em;
       text-align: justify;
     }
   }
@@ -73,7 +77,6 @@
 
   h3     { padding-bottom: 0px; }
   p {
-    font-size: 1.2em;
     text-align: justify;
   }
   .entry-options {

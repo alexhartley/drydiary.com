@@ -1,7 +1,7 @@
 class DryController < ApplicationController
 
   def index
-    redirect_to action: :show, username: current_user.username if user_signed_in?
+    Index.new(self).action
   end
 
   def show
