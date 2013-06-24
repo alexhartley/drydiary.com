@@ -31,6 +31,7 @@ en:
               taken: "Unfortunately, that username has already been taken."
             email:
               blank: "We need your email address to confirm the account."
+              taken: "Your email is already registered - have you forgotten your password?"
             username:
               blank: "Please choose a username."
             addiction:

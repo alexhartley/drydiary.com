@@ -27,6 +27,10 @@ end
 
 gem 'unicorn'
 
+group :development do
+  gem "letter_opener"
+end
+
 group :development, :test, :cucumber do
   gem 'rspec-rails'
   gem "cucumber-rails", "~> 1.3.0", require: false
