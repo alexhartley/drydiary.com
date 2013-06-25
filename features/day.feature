@@ -20,3 +20,7 @@ Feature:
     Given   I have already made an entry for today
     When    I edit the entry for that day
     Then    The new text I have entered appears as part of the day
+
+  Scenario: Editing a ticked day
+    When    I edit a ticked day
+    Then    The day remains ticked

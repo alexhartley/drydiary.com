@@ -2,17 +2,25 @@ class DaysController < ApplicationController
   class Save < Fendhal::Action
 
     def action
-      day.update_attributes(day_params) and redirect_to redirect_url
+      update_day and redirect_to redirect_url
     end
 
     private
 
-    def redirect_url
-      !tick? && request.referrer.match(/\/edit$/) ? '/' : :back
+    def update_day
+      day.update_attributes(day_params.merge(ticked: ticked?))
     end
 
-    def tick?
+    def redirect_url
+      !tick_form? && request.referrer.match(/\/edit$/) ? '/' : :back
+    end
+
+    def tick_form?
       !params[:tick].nil?
+    end
+
+    def ticked?
+      tick_form? ? !day.ticked : day.ticked
     end
 
     def day

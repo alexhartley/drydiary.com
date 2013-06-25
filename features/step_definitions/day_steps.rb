@@ -47,3 +47,14 @@ Then(/^The new text I have entered appears as part of the day$/) do
     page.should_not have_content "Narrowly avoided a whole bunch of catnip today :-s"
   end
 end
+
+Given(/^I edit a ticked day$/) do
+  steps %{
+    * today's date is ticked
+    * I edit the entry for that day
+  }
+end
+
+Then(/^The day remains ticked$/) do
+  page.should have_selector '.ticked'
+end
