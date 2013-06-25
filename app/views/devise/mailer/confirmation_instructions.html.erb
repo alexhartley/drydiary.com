@@ -1,5 +1,18 @@
-<p>Welcome <%= @email %>!</p>
+<%= render 'header', title: '' %>
+<div style="color: #333; padding: 5px; font-family: arial, sans-serif;">
+<p>Welcome to DRY DIARY, <%= @resource.username %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
-
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+<p>
+  You can confirm your account email <%= link_to 'here', confirmation_url(@resource, confirmation_token: @resource.confirmation_token) %>
+  or by pasting the following url into your browser: <br /><%= link_to confirmation_url(@resource, confirmation_token: @resource.confirmation_token), confirmation_url(@resource, confirmation_token: @resource.confirmation_token) %>
+</p>
+<p>
+  Good luck giving up and continuing to live without <%= @resource.addiction %>.
+</p>
+<p>
+  Regards,
+</p>
+<p style="font-weight: bold;">
+  Russell @ DRY DIARY
+</p>
+</div>
