@@ -29,3 +29,17 @@ Feature:
     When    I untick it
     Then    it goes back to being grey
     And     I am still on the edit screen
+
+  @javascript
+  Scenario: Ticking a date with AJAX
+    Given   today's date is unticked
+    When    I tick it
+    Then    it goes green
+    And     my day count increases by one
+
+  @javascript
+  Scenario: Unticking a date with AJAX
+    Given   today's date is ticked
+    When    I untick it
+    Then    it goes back to being grey
+    And     my day count decreases by one

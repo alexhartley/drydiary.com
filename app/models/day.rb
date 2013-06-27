@@ -18,12 +18,4 @@ class Day
     where(date: { "$ne" => Date.today }, ticked: true)
   }
 
-  scope :with_text, -> {
-    where(text: { "$exists" => true, "$ne" => '' })
-  }
-
-  scope :range, ->(from, to) {
-    where(date: { "$between" => [from, to] })
-  }
-
 end

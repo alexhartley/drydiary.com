@@ -8,7 +8,7 @@ end
 Given(/^today's date is ticked$/) do
   step "I tick it"
   page.should have_text 'catface is on their 1st day without catnip'
-  within first('li.day') do
+  within first('.tick-box') do
     page.should have_selector '.ticked'
   end
 end
@@ -18,11 +18,15 @@ When(/^I (?:untick|tick) it$/) do
 end
 
 Then(/^it goes green$/) do
-  first('.tick')['class'].should include ' ticked'
+  within first('.tick-box') do
+    page.should have_selector '.ticked'
+  end
 end
 
 Then(/^it goes back to being grey/) do
-  first('.tick')['class'].should include ' unticked'
+  within first('.tick-box') do
+    page.should have_selector '.unticked'
+  end
 end
 
 Then(/^my day count increases by one$/) do

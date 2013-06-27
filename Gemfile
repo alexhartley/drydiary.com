@@ -37,6 +37,7 @@ group :development, :test, :cucumber do
   gem "database_cleaner", "~> 0.9.1"
   gem "launchy", "~> 2.1.2"
   gem "simplecov"
+  gem "capybara-webkit"
 end
 
 group :production do
