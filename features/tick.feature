@@ -24,11 +24,23 @@ Feature:
     Then    it goes green
     And     I am still on the edit screen
 
-  Scenario: Ticking a date while editing
+  Scenario: Unticking a date while editing
     Given   I am editing a ticked diary entry
     When    I untick it
     Then    it goes back to being grey
     And     I am still on the edit screen
+
+  @javascript
+  Scenario: Ticking a date while editing with AJAX
+    Given   I am editing an unticked diary entry
+    When    I tick it and click update
+    Then    it goes green
+
+  @javascript
+  Scenario: Unticking a date while editing with AJAX
+    Given   I am editing a ticked diary entry
+    When    I untick it and click update
+    Then    it goes back to being grey
 
   @javascript
   Scenario: Ticking a date with AJAX

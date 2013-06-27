@@ -6,7 +6,7 @@ $(function(){
 
   $('.edit-day-form').on('click', '.tick', function(e) {
     $(this).toggleClass('ticked').toggleClass('unticked');
-    var ticked = $(':input[name="day[ticked]"]', this);
+    var ticked = $(this).closest('form').find(':input[name="day[ticked]"]');
     ticked.val(ticked.val() != 'true');
     e.preventDefault();
     return false;

@@ -17,6 +17,11 @@ When(/^I (?:untick|tick) it$/) do
   first('.tick').click
 end
 
+When(/^I (untick|tick) it and click update$/) do |action|
+  step "I #{action} it"
+  click_on "Update Entry"
+end
+
 Then(/^it goes green$/) do
   within first('.tick-box') do
     page.should have_selector '.ticked'

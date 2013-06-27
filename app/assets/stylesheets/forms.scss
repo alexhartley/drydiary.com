@@ -7,6 +7,9 @@
   text-align: right;
   overflow: hidden;
   min-height: 35px;
+  button, input, a {
+    margin-top: 10px;
+  }
 }
 .error-type {
   padding-right: 5px;

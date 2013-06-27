@@ -16,7 +16,7 @@ class DaysController < ApplicationController
     end
 
     def update_day
-      day.update_attributes(day_params.merge(ticked: ticked?))
+      day.update_attributes(changes)
     end
 
     def redirect_url
@@ -27,8 +27,16 @@ class DaysController < ApplicationController
       !params[:tick].nil?
     end
 
-    def ticked?
-      tick_form? ? !day.ticked : day.ticked
+    def changes
+      day_params.merge(tick_params)
+    end
+
+    def tick_params
+      tick_form? ? { ticked: !day.ticked } : { }
+    end
+
+    def day_params
+      params.require(:day).permit(:date, :text, :ticked)
     end
 
     def day
@@ -37,10 +45,6 @@ class DaysController < ApplicationController
 
     def date
       day_params.fetch(:date)
-    end
-
-    def day_params
-      params.require(:day).permit(:date, :text, :ticked)
     end
 
   end
