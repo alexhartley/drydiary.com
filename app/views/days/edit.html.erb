@@ -6,9 +6,9 @@
       <div class="date-rest-of-date"><%= day.date.strftime "%Y" %></div>
     </div>
   </h2>
-  <%= form_for(day) do |f| %>
+  <%= form_for day, html: { class: 'edit-day-form' } do |f| %>
     <div class="tick-box">
-      <%= f.hidden_field :ticked, id: dom_id(day, :ticked), value: !day.ticked? %>
+      <%= f.hidden_field :ticked, id: dom_id(day, :ticked), value: day.ticked? %>
       <%= f.hidden_field :date, id: dom_id(day, :date) %>
       <%= f.submit '', name: 'tick', class: tick_icon_class(day) %>
     </div>

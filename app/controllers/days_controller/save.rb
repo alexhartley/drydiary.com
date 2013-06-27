@@ -2,10 +2,18 @@ class DaysController < ApplicationController
   class Save < Fendhal::Action
 
     def action
-      update_day and redirect_to redirect_url
+      update_day and respond_to :json, :html
     end
 
     private
+
+    def html
+      redirect_to redirect_url
+    end
+
+    def json
+      render json: { ordinal: current_user.consecutive_days.ordinalize }
+    end
 
     def update_day
       day.update_attributes(day_params.merge(ticked: ticked?))
