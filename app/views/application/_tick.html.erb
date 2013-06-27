@@ -1,7 +1,7 @@
 <div class="tick-box">
-  <%= form_for day, remote: true, html: { class: 'tick-form' } do |f| %>
-    <%= f.hidden_field :ticked, id: dom_id(day, :ticked), value: day.ticked %>
-    <%= f.hidden_field :date, id: dom_id(day, :date) %>
+  <%= form_for day, remote: true, html: { id: dated_dom_id(day, :edit), class: 'tick-form' } do |f| %>
+    <%= f.hidden_field :ticked, id: dated_dom_id(day, :ticked), value: day.ticked %>
+    <%= f.hidden_field :date, id: dated_dom_id(day, :date) %>
     <%= f.submit '', name: 'tick', class: tick_icon_class(day) %>
   <% end %>
 </div>

@@ -16,4 +16,7 @@ module DryHelper
     render (current_user == day.user ? 'tick' : 'tick_read_only'), day: day
   end
 
+  def dated_dom_id(day, prefix)
+    "#{dom_id day, prefix}_#{day.date.strftime '%Y%m%d'}"
+  end
 end

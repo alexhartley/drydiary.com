@@ -47,4 +47,10 @@ describe DryHelper do
     end
   end
 
+  describe "#dated_dom_id" do
+    it 'suffixes the dom id with the date' do
+      day = Day.new(date: Date.new(2013, 6, 5))
+      helper.dated_dom_id(day, :ticked).should eq "ticked_day_20130605"
+    end
+  end
 end

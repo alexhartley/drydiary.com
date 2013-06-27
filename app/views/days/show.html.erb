@@ -1,10 +1,10 @@
 <div id="show-day">
   <h2>
-    <div class="date-header">
-      <div class="date-day-of-week"><%= day.date.strftime "%A" %></div>
-      <div class="date-rest-of-date"><%= day.date.strftime "%d %B" %></div>
-      <div class="date-rest-of-date"><%= day.date.strftime "%Y" %></div>
-    </div>
+    <span class="date-header">
+      <span class="date-day-of-week"><%= day.date.strftime "%A" %></span>
+      <span class="date-rest-of-date"><%= day.date.strftime "%d %B" %></span>
+      <span class="date-rest-of-date"><%= day.date.strftime "%Y" %></span>
+    </span>
   </h2>
   <%= render_tick day %>
   <h3><%= day.user.username %></h3>
