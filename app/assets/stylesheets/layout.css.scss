@@ -2,11 +2,13 @@
 html {
   position: relative;
   min-height: 100%;
+  min-width: 100%;
 }
 
 body {
   margin: 0 0 175px;
   color: #333;
+  min-width: 100%;
 }
 
 h2 {
