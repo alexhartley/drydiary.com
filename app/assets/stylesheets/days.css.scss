@@ -1,14 +1,3 @@
-#user-summary {
-  line-height: 1.3em;
-  margin: 10px 1px;
-  font-family: 'Roboto', sans-serif;
-
-  @media (max-width: 480px) {
-    font-size: 2.3em;
-    small { font-size: 0.7em; }
-  }
-}
-
 .days {
   list-style: none;
   margin-left: 0px;

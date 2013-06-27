@@ -1,0 +1,10 @@
+<%= content_for :ribbon do %>
+  <div class="ribbon">
+    <h1 id="ribbon-content">
+      <%= user.username %>
+      <small>is on <%= user.preferred_pronoun %></small>
+      <span class="dry-ordinal"><%= user.consecutive_days.ordinalize %></span>
+      <small>day without <%= user.addiction %></small>
+    </h1>
+  </div>
+<% end %>
