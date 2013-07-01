@@ -10,3 +10,5 @@ You can find DRY DIARY at [drydiary.com](http://drydiary.com). If you'd like to 
     bundle exec unicorn
     
 to start a server. You'll need to have a local instance of MongoDB up and runnning on the default port (27017).
+
+This will run the app on localhost:8080.
