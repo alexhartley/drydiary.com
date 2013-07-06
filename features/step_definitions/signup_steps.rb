@@ -12,10 +12,8 @@ When(/^I fill in the registration form/) do
 end
 
 Then(/^an account is created for me and I am logged in$/) do
-  steps %{
-    * I am on the homepage
-    * I go to the sign in page
-  }
+  step "I am on the homepage"
+  step "I go to the sign in page"
   fill_in 'Email', with: 'russell@drydiary.com'
   fill_in 'Password', with: 'reallygoodpassword'
   click_button 'Sign in'
@@ -24,10 +22,8 @@ Then(/^an account is created for me and I am logged in$/) do
 end
 
 When(/^I try to sign up with a username that is already taken$/) do
-  steps %{
-    * I fill in the registration form
-    * an account is created for me and I am logged in
-    * I choose to sign out
-    * I fill in the registration form
-  }
+  step "I fill in the registration form"
+  step "an account is created for me and I am logged in"
+  step "I choose to sign out"
+  step "I fill in the registration form"
 end

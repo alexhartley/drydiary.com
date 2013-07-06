@@ -22,12 +22,10 @@ Then /^I am no longer signed in$/ do
 end
 
 Given /^I have signed in$/ do
-  steps %{
-    * I am on the homepage
-    * I go to the sign in page
-    * I fill in my email and password
-    * I am signed in
-  }
+  step "I am on the homepage"
+  step "I go to the sign in page"
+  step "I fill in my email and password"
+  step "I am signed in"
 end
 
 When /^I choose to sign out$/ do
