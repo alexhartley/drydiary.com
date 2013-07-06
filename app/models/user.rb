@@ -28,7 +28,7 @@ class User
   has_many :days
 
   validates_presence_of :username, :addiction
-  validates :username, :exclusion => { :in => %w(users days) }
+  validates :username, exclusion: { in: %w(users days) }
   validates_uniqueness_of :username, message: "Unfortunately that username has already been taken."
   validates_presence_of :pronoun, if: ->{ custom_pronoun.blank? }
 
