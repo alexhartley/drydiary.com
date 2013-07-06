@@ -12,6 +12,12 @@ Feature:
     Then    I see their posts
     But     I cannot edit them
 
+  @javascript
+  Scenario: Ticking another user's diary
+    When    I visit a user's diary
+    Then    I see their posts
+    But     I cannot tick them
+
   Scenario: Viewing another user's post
     When    I visit a user's post
     Then    I can see the post

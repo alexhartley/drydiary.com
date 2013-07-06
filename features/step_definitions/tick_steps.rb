@@ -62,3 +62,9 @@ end
 Then(/^I am still on the edit screen$/) do
   page.should have_text 'The desire for catnip is starting to loosen its grip'
 end
+
+Then(/^I cannot tick them$/) do
+  first('.tick')['class'].should include ' unticked'
+  first('.tick').click
+  first('.tick')['class'].should include ' unticked'
+end

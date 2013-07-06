@@ -1,10 +1,10 @@
 $(function(){
 
-  $(document).on('click', '.tick', function(e) {
+  $(document).on('click', 'input.tick', function(e) {
     $(this).toggleClass('ticked').toggleClass('unticked');
   });
 
-  $('.edit-day-form').on('click', '.tick', function(e) {
+  $('.edit-day-form').on('click', 'input.tick', function(e) {
     $(this).toggleClass('ticked').toggleClass('unticked');
     var ticked = $(this).closest('form').find(':input[name="day[ticked]"]');
     ticked.val(ticked.val() != 'true');
