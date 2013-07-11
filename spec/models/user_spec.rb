@@ -14,11 +14,11 @@ describe User do
 
   end
 
-  describe "#consecutive_days" do
-    it 'delegates to a consecutive days calculator' do
+  describe "#tally" do
+    it 'delegates to the tally calculator' do
       user = User.new
-      ConsecutiveDaysCalculator.should_receive(:new).with(user).and_return(stub(calculate: 4))
-      user.consecutive_days.should eq 4
+      Tally.should_receive(:new).with(user).and_return(stub(calculate: 4))
+      user.tally.should eq 4
     end
   end
 

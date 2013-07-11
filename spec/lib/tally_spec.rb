@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ConsecutiveDaysCalculator do
+describe Tally do
 
   before do
     DatabaseCleaner.clean
@@ -11,7 +11,7 @@ describe ConsecutiveDaysCalculator do
                              password: 'password1',
                              username: 'catface') }
 
-  let (:calculator) { ConsecutiveDaysCalculator.new(user) }
+  let (:calculator) { Tally.new(user) }
 
   it 'counts the number of consecutive ticked days' do
     user.days.create(date: Date.today,     ticked: true)
