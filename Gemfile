@@ -29,6 +29,7 @@ gem 'unicorn'
 
 group :development do
   gem "letter_opener"
+  gem "travis"
 end
 
 group :development, :test, :cucumber do
