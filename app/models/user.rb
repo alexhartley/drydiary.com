@@ -1,4 +1,4 @@
-require 'consecutive_days_calculator'
+require 'tally'
 
 class User
   include Mongoid::Document
@@ -32,8 +32,8 @@ class User
   validates_uniqueness_of :username, message: "Unfortunately that username has already been taken."
   validates_presence_of :pronoun, if: ->{ custom_pronoun.blank? }
 
-  def consecutive_days
-    @consecutive_days ||= ConsecutiveDaysCalculator.new(self).calculate
+  def tally
+    @tally ||= Tally.new(self).calculate
   end
 
   def preferred_pronoun

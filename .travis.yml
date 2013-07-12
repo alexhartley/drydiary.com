@@ -1,7 +1,17 @@
+---
 before_install:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
 services:
-  - mongodb
+- mongodb
 rvm:
-  - 1.9.3
+- 1.9.3
+deploy:
+  provider: heroku
+  app: drydiary
+  api_key:
+    secure: ! 'BPIvllBwQZCoMp0vE+239YGCHPvbHj9oSWhxu64yMJsL89o/GUXZBYcjqA3r
+
+      sqNnyDJnNfoJEwj/Cf2K9ZBrfEHx/c/9DC9Kgw1wIAaMkXq5DGpTNBoIRcec
+
+      KHmA9X6QSYOg24pmjj0I2QkmGcmB1stlpp9zlkFxPe7uZlNvoao='

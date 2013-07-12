@@ -12,7 +12,7 @@ class DaysController < ApplicationController
     end
 
     def json
-      render json: { ordinal: current_user.consecutive_days.ordinalize }
+      render json: { ordinal: current_user.tally.ordinalize }
     end
 
     def update_day

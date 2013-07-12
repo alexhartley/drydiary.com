@@ -1,4 +1,4 @@
-class ConsecutiveDaysCalculator
+class Tally
 
   def initialize(user)
     @user = user
