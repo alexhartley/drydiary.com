@@ -1,0 +1,21 @@
+.pagination {
+  padding: 0 3px;
+  a {
+    background: #efefef;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: 1px solid #dadada;
+  }
+  a:hover {
+    background: #dadada;
+  }
+
+  a.next {
+    float: left;
+  }
+  a.prev {
+    float: right;
+    text-align: right;
+  }
+  overflow: hidden;
+}

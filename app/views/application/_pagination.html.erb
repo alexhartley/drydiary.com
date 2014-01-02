@@ -1,0 +1,4 @@
+<%= content_tag :div, class: 'pagination', data: { page: page } do %>
+  <%= link_to "Older posts", profile_path(user.username, page: page + 1), class: 'next' %>
+  <%= link_to "Newer posts", profile_path(user.username, page: page - 1), class: "prev #{'hidden' if page == 1}" %>
+<% end %>

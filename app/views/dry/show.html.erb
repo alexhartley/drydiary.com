@@ -1,4 +1,6 @@
 <%= render 'ribbon', user: user %>
+<%= render 'pagination', user: user, page: params.fetch(:page, 1).to_i %>
 <ul class="days">
   <%= render days %>
 </ul>
+<%= render 'pagination', user: user, page: params.fetch(:page, 1).to_i %>
