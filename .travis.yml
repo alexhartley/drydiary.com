@@ -5,7 +5,7 @@ before_install:
 services:
 - mongodb
 rvm:
-- 1.9.3
+- 2.0.0
 deploy:
   provider: heroku
   app: drydiary
