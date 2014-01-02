@@ -4,7 +4,7 @@ DrydiaryCom::Application.routes.draw do
 
   resources :days, only: [:create, :update]
 
-  get ':username' => 'dry#show'
+  get ':username' => 'dry#show', as: :profile
   get ':username/:year/:month/:day' => 'days#show'
   get ':username/:year/:month/:day/edit' => 'days#edit'
 

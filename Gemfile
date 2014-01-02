@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
+ruby '2.0.0'
 
 gem 'rails', '4.0.0.rc1'
 
@@ -15,6 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'pagedown-bootstrap-rails'
 gem 'redcarpet'
+gem 'kaminari'
 
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'

@@ -3,28 +3,26 @@ class DryController < ApplicationController
   class Show < Fendhal::Action
 
     def action
-      render locals: { user: user, days: days }
+      respond_to :html
     end
 
     private
+
+    def html
+      render locals: { user: user, days: days }
+    end
 
     def user
       @user ||= User.where(username: params[:username]).one
     end
 
+    def offset
+      @offset ||= (params.fetch(:page, 1).to_i - 1) * 25
+    end
+
     def days
-      (Date.today).downto(user.created_at.to_date).collect do |date|
-        days_dictionary.fetch(date) { user.days.build(date: date) }
-      end
-    end
-
-    def existing_days
-      user.days
-    end
-
-    def days_dictionary
-      @days_dictionary ||= existing_days.reduce({}) do |acc, day|
-        acc.merge(day.date => day)
+      (Date.today - offset).downto(Date.today - offset - 24).map do |date|
+        user.days.where(date: date).find_or_initialize_by
       end
     end
 
