@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 
-gem 'rails', '4.0.0.rc1'
+gem 'rails', "~> 4.0.2"
 
 gem 'mongo'
 gem 'bson_ext'
 gem 'mongoid', github: 'mongoid/mongoid'
-gem 'devise', github: 'plataformatec/devise'
+gem 'devise'
 gem 'optional'
 gem 'fendhal'
 
@@ -15,7 +15,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'pagedown-bootstrap-rails'
 gem 'redcarpet'
-gem 'kaminari'
 
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
@@ -33,7 +32,7 @@ group :development do
   gem "travis"
 end
 
-group :development, :test, :cucumber do
+group :development, :test do
   gem 'rspec-rails'
   gem "cucumber-rails", "~> 1.3.0", require: false
   gem "database_cleaner", "~> 0.9.1"
